@@ -63,7 +63,7 @@ using (var scope = scopeFactory.CreateScope())
     var db = scope.ServiceProvider.GetRequiredService<HotelContext>();
     if (db.Database.EnsureCreated())
     {
-        SeedData.InitializeAsync(db);
+        await SeedData.InitializeAsync(db);
     }
 }
 
